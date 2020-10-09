@@ -23,10 +23,5 @@ public class Timer : MonoBehaviour
 
         //update the label value
         runTimer.text = minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
-
-        //if (Ending == true)
-        //{
-        //    Timer.timeScale = 0;
-        //}
     }
 }

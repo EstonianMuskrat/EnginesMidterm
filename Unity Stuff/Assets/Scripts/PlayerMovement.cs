@@ -42,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.name == ("Goal"))
         {
             SceneManager.LoadScene("End Scene");
-            //Ending == true;
         }
     }
 }
