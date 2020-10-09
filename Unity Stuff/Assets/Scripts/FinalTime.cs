@@ -6,14 +6,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class FinalTime : MonoBehaviour
 {
-    public Text runTimer;
+    public Text finalTimer;
     private float milliseconds, seconds, minutes;
 
     void start()
     {
-        runTimer = GetComponent<Text>() as Text;
+        finalTimer = GetComponent<Text>() as Text;
     }
 
     void Update()
@@ -23,6 +23,11 @@ public class Timer : MonoBehaviour
         milliseconds = (int)(Time.time * 1000f) % 1000f;
 
         //update the label value
-        runTimer.text = minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
+        finalTimer.text = "Time: " + minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("End Scene"))
+        {
+            Time.timeScale = 0;
+        }
     }
 }
